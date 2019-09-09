@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/currrent_temperature_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Current Temperature"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/wind_speed_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Wind Speed"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currrent_temperature_title">
+
+        <TextView
+            android:id="@+id/current_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 °C / 40 °F"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/cloudy_or_sunny_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/current_temperature"
+            app:srcCompat="@drawable/sunny_icon" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/wind_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="30 m/s"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wind_speed_title" />
+
+    <Button
+        android:id="@+id/get_next_5_days_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Get next 5 days"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/standard_deviation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Standard Deviation: 0.000"
+        app:layout_constraintBottom_toBottomOf="@+id/get_next_5_days_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/get_next_5_days_button"
+        app:layout_constraintTop_toTopOf="@+id/get_next_5_days_button" />
+
+    <TextView
+        android:id="@+id/day_1_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Day 1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/get_next_5_days_button" />
+
+    <ImageView
+        android:id="@+id/day_1_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/day_1_title"
+        app:layout_constraintStart_toStartOf="@+id/day_1_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_1_title"
+        app:srcCompat="@drawable/sunny_icon" />
+
+    <TextView
+        android:id="@+id/day_1_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- / -"
+        app:layout_constraintEnd_toEndOf="@+id/day_1_title"
+        app:layout_constraintStart_toStartOf="@+id/day_1_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_1_icon" />
+
+    <TextView
+        android:id="@+id/day_2_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginLeft="90dp"
+        android:text="Day 2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/day_1_title"
+        app:layout_constraintTop_toTopOf="@+id/day_1_title" />
+
+    <ImageView
+        android:id="@+id/day_2_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/day_2_title"
+        app:layout_constraintStart_toStartOf="@+id/day_2_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_2_title"
+        app:srcCompat="@drawable/sunny_icon" />
+
+    <TextView
+        android:id="@+id/day_2_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- / -"
+        app:layout_constraintEnd_toEndOf="@+id/day_2_title"
+        app:layout_constraintStart_toStartOf="@+id/day_2_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_2_icon" />
+
+    <TextView
+        android:id="@+id/day_3_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginLeft="90dp"
+        android:text="Day 3"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/day_2_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_2_temp"
+        app:layout_constraintTop_toTopOf="@+id/day_2_title" />
+
+    <ImageView
+        android:id="@+id/day_3_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/day_3_title"
+        app:layout_constraintStart_toStartOf="@+id/day_3_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_3_title"
+        app:srcCompat="@drawable/sunny_icon" />
+
+    <TextView
+        android:id="@+id/day_3_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- / -"
+        app:layout_constraintEnd_toEndOf="@+id/day_3_title"
+        app:layout_constraintStart_toStartOf="@+id/day_3_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_3_icon" />
+
+    <TextView
+        android:id="@+id/day_4_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Day 4"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/day_1_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_1_temp" />
+
+    <TextView
+        android:id="@+id/day_5_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginLeft="90dp"
+        android:text="Day 5"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/day_4_title"
+        app:layout_constraintTop_toTopOf="@+id/day_4_title" />
+
+    <TextView
+        android:id="@+id/day_4_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- / -"
+        app:layout_constraintEnd_toEndOf="@+id/day_4_title"
+        app:layout_constraintStart_toStartOf="@+id/day_4_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_4_icon" />
+
+    <TextView
+        android:id="@+id/day_5_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- / -"
+        app:layout_constraintEnd_toEndOf="@+id/day_5_title"
+        app:layout_constraintStart_toStartOf="@+id/day_5_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_5_icon" />
+
+    <ImageView
+        android:id="@+id/day_4_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/day_4_title"
+        app:layout_constraintStart_toStartOf="@+id/day_4_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_4_title"
+        app:srcCompat="@drawable/sunny_icon" />
+
+    <ImageView
+        android:id="@+id/day_5_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/day_5_title"
+        app:layout_constraintStart_toStartOf="@+id/day_5_title"
+        app:layout_constraintTop_toBottomOf="@+id/day_5_title"
+        app:srcCompat="@drawable/sunny_icon" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+</android.support.constraint.ConstraintLayout>
